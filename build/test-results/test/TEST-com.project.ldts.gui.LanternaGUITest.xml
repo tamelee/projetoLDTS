@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.ldts.gui.LanternaGUITest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.157">
+  <properties/>
+  <testcase name="drawFirstRow()" classname="com.project.ldts.gui.LanternaGUITest" time="0.129"/>
+  <testcase name="clear()" classname="com.project.ldts.gui.LanternaGUITest" time="0.002"/>
+  <testcase name="close()" classname="com.project.ldts.gui.LanternaGUITest" time="0.002"/>
+  <testcase name="refresh()" classname="com.project.ldts.gui.LanternaGUITest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

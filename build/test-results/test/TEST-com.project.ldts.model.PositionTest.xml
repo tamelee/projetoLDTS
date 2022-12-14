@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.ldts.model.PositionTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.024">
+  <properties/>
+  <testcase name="getDown()" classname="com.project.ldts.model.PositionTest" time="0.001"/>
+  <testcase name="getLeft()" classname="com.project.ldts.model.PositionTest" time="0.0"/>
+  <testcase name="getUp()" classname="com.project.ldts.model.PositionTest" time="0.001"/>
+  <testcase name="checkIfNear()" classname="com.project.ldts.model.PositionTest" time="0.01"/>
+  <testcase name="getRight()" classname="com.project.ldts.model.PositionTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

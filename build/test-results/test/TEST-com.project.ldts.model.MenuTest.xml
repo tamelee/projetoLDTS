@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.ldts.model.MenuTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.016">
+  <properties/>
+  <testcase name="menuLoser()" classname="com.project.ldts.model.MenuTest" time="0.007"/>
+  <testcase name="menuArenas()" classname="com.project.ldts.model.MenuTest" time="0.001"/>
+  <testcase name="menuWinner()" classname="com.project.ldts.model.MenuTest" time="0.0"/>
+  <testcase name="mainMenu()" classname="com.project.ldts.model.MenuTest" time="0.0"/>
+  <testcase name="menuSettings()" classname="com.project.ldts.model.MenuTest" time="0.001"/>
+  <testcase name="menuWinnerScore()" classname="com.project.ldts.model.MenuTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

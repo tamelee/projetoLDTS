@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.ldts.gui.DarkGUITest" tests="21" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.071">
+  <properties/>
+  <testcase name="drawScoreMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawAboutMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawSafeHouse()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawSpecialBox()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawMainMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawSand()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawWall()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawBullet()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawInstructionsMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawOnSand()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawPlayer()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawArenaFloor()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawArenasMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawEnemy()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawWater()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawArenaScoreMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawLoserMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawSettings()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawWinnerScore()" classname="com.project.ldts.gui.DarkGUITest" time="0.002"/>
+  <testcase name="drawWinnerMenu()" classname="com.project.ldts.gui.DarkGUITest" time="0.003"/>
+  <testcase name="drawOnWater()" classname="com.project.ldts.gui.DarkGUITest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

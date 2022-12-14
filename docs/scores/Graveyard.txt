@@ -1,0 +1,5 @@
+KHALEESI:144
+Elton:5
+Maureen:4
+TAMELE:3
+AHSHU:2

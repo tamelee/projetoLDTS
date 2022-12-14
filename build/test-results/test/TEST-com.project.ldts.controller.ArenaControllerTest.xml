@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.ldts.controller.ArenaControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.137">
+  <properties/>
+  <testcase name="gameController()" classname="com.project.ldts.controller.ArenaControllerTest" time="0.133"/>
+  <testcase name="playerAttackk()" classname="com.project.ldts.controller.ArenaControllerTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

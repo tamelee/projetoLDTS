@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.ldts.controller.MenuControllerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:08" hostname="Eltons-MacBook-Pro.local" time="0.347">
+  <properties/>
+  <testcase name="aboutMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.067"/>
+  <testcase name="winnerScoreMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.053"/>
+  <testcase name="arenasMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.056"/>
+  <testcase name="mainMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.05"/>
+  <testcase name="loserMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.038"/>
+  <testcase name="instructionsMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.002"/>
+  <testcase name="settingsMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.039"/>
+  <testcase name="arenaScoreMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.003"/>
+  <testcase name="winnerMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.029"/>
+  <testcase name="scoreMenu()" classname="com.project.ldts.controller.MenuControllerTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

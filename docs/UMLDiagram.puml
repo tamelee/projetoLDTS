@@ -1,0 +1,186 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Application{
+start()
+setState(State)
+}
+
+abstract class State<T>{
+getController(): Controller<T>
+getViewer(): Viewer<T>
+getModel(): T
+step(game, gui, time)
+}
+
+class GameState{
+getController()
+getViewer()
+}
+
+class MenuState{
+getController()
+getViewer()
+}
+
+abstract class Controller<T>{
+step(game, action, time)
+}
+
+abstract class Viewer<T>{
+draw(GUI)
+}
+
+abstract class GameController{
+step(game, action, time)
+}
+
+class MenuController{
+step(game, action, time)
+}
+
+class PlayerController{
+step(game, action, time)
+movePlayer(position)
+movePlayerUp()
+movePlayerDown()
+movePlayerLeft()
+movePlayerRight()
+}
+
+class EnemyController{
+step(game, action, time)
+moveEnemies(enemy, position)
+enemyAttack(time)
+}
+
+class BulletController{
+step(game, action, time)
+}
+
+class ArenaController{
+step(game, action, time)
+}
+
+class GameViewer{
+draw(GUI)
+}
+
+class MenuViewer{
+draw(GUI)
+}
+
+interface ElementViewer<T>{
+draw(element, GUI)
+}
+
+class PlayerViewer{
+draw(element, GUI)
+}
+
+class EnemyViewer{
+draw(element, GUI)
+}
+
+class BulletViewer{
+draw(element, GUI)
+}
+
+class SafeHouseViewer{
+draw(element, GUI)
+}
+
+class SandViewer{
+draw(element, GUI)
+}
+
+class WallViewer{
+draw(element, GUI)
+}
+
+class WaterViewer{
+draw(element, GUI)
+}
+
+class Menu{}
+
+class Arena{
+width
+height
+}
+
+class Menu{}
+
+abstract class Element{}
+
+class Player{}
+class Enemy{}
+class Wall{}
+class Water{}
+class Sand{}
+class SafeHouse{}
+class Bullet{}
+
+interface Health{
+increaseHealth()
+decreaseHealth()
+}
+
+class Position{
+getX()
+getY()
+}
+
+State "1" <-- Application
+State <|-- GameState
+State <|-- MenuState
+
+Menu <-- MenuState
+Arena <-- GameState
+
+Controller <-- State
+Viewer <-- State
+
+Controller <|-- GameController
+Controller <|-- MenuController
+
+GameController <|-- PlayerController
+GameController <|-- EnemyController
+GameController <|-- BulletController
+GameController <|-- ArenaController
+
+Viewer <|-- GameViewer
+Viewer <|-- MenuViewer
+
+ElementViewer <.. GameViewer
+ElementViewer <|-- PlayerViewer
+ElementViewer <|-- EnemyViewer
+ElementViewer <|-- BulletViewer
+ElementViewer <|-- WallViewer
+ElementViewer <|-- WaterViewer
+ElementViewer <|-- SandViewer
+ElementViewer <|-- SafeHouseViewer
+
+Player <-- Arena
+Enemy <-- Arena
+Wall <-- Arena
+Bullet <-- Arena
+Water <-- Arena
+Sand <-- Arena
+SafeHouse <-- Arena
+
+Element <|-- Player
+Element <|-- Enemy
+Element <|-- Wall
+Element <|-- Bullet
+Element <|-- Water
+Element <|-- Sand
+Element <|-- SafeHouse
+
+Health <.. Player
+Health <.. Enemy
+
+Position <-- Element
+
+@enduml
