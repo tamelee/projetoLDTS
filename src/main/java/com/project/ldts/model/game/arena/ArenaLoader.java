@@ -27,6 +27,7 @@ public class ArenaLoader extends ArenaBuilder{
         return lines;
     }
 
+    @Override
     public int getWidth() {
         int width = 0;
         for (String line : lines)
@@ -35,11 +36,13 @@ public class ArenaLoader extends ArenaBuilder{
     }
 
 
+    @Override
     public int getHeight() {
         return lines.size();
     }
 
 
+    @Override
     protected List<Wall> createWalls() {
         List<Wall> walls = new ArrayList<>();
 
@@ -53,6 +56,7 @@ public class ArenaLoader extends ArenaBuilder{
     }
 
 
+    @Override
     protected List<Enemy> createEnemies() {
         List<Enemy> monsters = new CopyOnWriteArrayList<>();
 
@@ -66,6 +70,7 @@ public class ArenaLoader extends ArenaBuilder{
     }
 
 
+    @Override
     protected Player createPlayer() {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
@@ -75,6 +80,7 @@ public class ArenaLoader extends ArenaBuilder{
         return null;
     }
 
+    @Override
     protected List<Water> createWater() {
         List<Water> waters = new ArrayList<>();
 
@@ -87,6 +93,7 @@ public class ArenaLoader extends ArenaBuilder{
         return waters;
     }
 
+    @Override
     protected List<Sand> createSand() {
         List<Sand> sands = new ArrayList<>();
 
@@ -99,6 +106,7 @@ public class ArenaLoader extends ArenaBuilder{
         return sands;
     }
 
+    @Override
     protected List<SafeHouse> createSafeHouse() {
         List<SafeHouse> shs = new ArrayList<>();
 
@@ -111,6 +119,7 @@ public class ArenaLoader extends ArenaBuilder{
         return shs;
     }
 
+    @Override
     protected List<SpecialBox> createSpecialBox() {
         List<SpecialBox> sb = new ArrayList<>();
 
