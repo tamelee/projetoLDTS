@@ -64,31 +64,6 @@ public class DarkGUI extends LanternaGUI{
     }
 
     @Override
-    public void drawSpecialBox(Position position){
-        drawCharacter(position.getX(), position.getY(), 'b', "#553107", "#E28112");
-    }
-
-    @Override
-    public void drawBullet(Position position) {
-        drawCharacter(position.getX(), position.getY(), '*', "#711E09", "#ECEC13");
-    }
-    @Override
-    public void drawText(Position position, String text, String color) {
-        TextGraphics graphics = screen.newTextGraphics();
-        graphics.setForegroundColor(TextColor.Factory.fromString(color));
-        graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(position.getX(), position.getY(), text);
-    }
-
-    private void drawCharacter(int x, int y, char c, String colorB, String colorF) {
-        TextGraphics graphics = screen.newTextGraphics();
-        graphics.setBackgroundColor(TextColor.Factory.fromString(colorB));
-        graphics.setForegroundColor(TextColor.Factory.fromString(colorF));
-        graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(x, y, "" + c);
-    }
-
-    @Override
     public void drawArenaFloor(int width, int height, char c){
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#84540B"));
@@ -181,7 +156,8 @@ public class DarkGUI extends LanternaGUI{
         graphics.putString(18,6,"  S E T T I N G S  ", SGR.REVERSE);
     }
 
-    private TextGraphics menuBackground(){
+    @Override
+    public TextGraphics menuBackground(){
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#052039"));
         graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(55, 30), ' ');

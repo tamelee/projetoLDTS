@@ -11,6 +11,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.project.ldts.model.Position;
 
 import java.awt.*;
 import java.io.File;
@@ -84,6 +85,31 @@ public abstract class LanternaGUI implements GUI {
         if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'c') return ACTION.COLLECT;
 
         return ACTION.NONE;
+    }
+
+    @Override
+    public void drawSpecialBox(Position position){
+        drawCharacter(position.getX(), position.getY(), 'b', "#553107", "#E28112");
+    }
+
+    @Override
+    public void drawBullet(Position position) {
+        drawCharacter(position.getX(), position.getY(), '*', "#711E09", "#ECEC13");
+    }
+    @Override
+    public void drawText(Position position, String text, String color) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setForegroundColor(TextColor.Factory.fromString(color));
+        graphics.enableModifiers(SGR.BOLD);
+        graphics.putString(position.getX(), position.getY(), text);
+    }
+
+    public void drawCharacter(int x, int y, char c, String colorB, String colorF) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString(colorB));
+        graphics.setForegroundColor(TextColor.Factory.fromString(colorF));
+        graphics.enableModifiers(SGR.BOLD);
+        graphics.putString(x, y, "" + c);
     }
 
     @Override
@@ -181,4 +207,13 @@ public abstract class LanternaGUI implements GUI {
             nome = nome.substring(0, nome.length() - 1);
         graphics.putString(22, 17, ""+nome);
     }
+
+    @Override
+    public String drawWinnerScoreMenu() {
+        TextGraphics graphics = menuBackground();
+        drawWinnerScoreTexts(graphics);
+        return nome;
+    }
+
+    public abstract TextGraphics menuBackground();
 }
