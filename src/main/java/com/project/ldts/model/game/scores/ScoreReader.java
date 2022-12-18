@@ -39,7 +39,7 @@ public class ScoreReader {
     }
 
     public HashMap<String, Integer> sort(HashMap<String, Integer> map){
-        List<Map.Entry<String, Integer> > list = new LinkedList<>(map.entrySet());
+        List<Map.Entry<String, Integer> > list = new ArrayList<>(map.entrySet());
 
         list.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
 
@@ -51,7 +51,7 @@ public class ScoreReader {
     }
 
     public boolean isTop5(int score){
-        List<Map.Entry<String, Integer> > list = new LinkedList<>(scores.entrySet());
+        List<Map.Entry<String, Integer> > list = new ArrayList<>(scores.entrySet());
         if(list.isEmpty())
             return true;
         for (Map.Entry<String, Integer> aux : list) {
@@ -65,7 +65,7 @@ public class ScoreReader {
     public void setTop5(String name, int score){
         scores.put(name, score);
         scores = sort(scores);
-        List<Map.Entry<String, Integer> > list = new LinkedList<>(scores.entrySet());
+        List<Map.Entry<String, Integer> > list = new ArrayList<>(scores.entrySet());
         list.remove(list.size()-1);
         HashMap<String, Integer> temp = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> aux : list) {

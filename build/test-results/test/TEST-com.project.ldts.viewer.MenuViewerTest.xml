@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.project.ldts.viewer.MenuViewerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.081">
+<testsuite name="com.project.ldts.viewer.MenuViewerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-18T22:48:32" hostname="Eltons-MacBook-Pro.local" time="0.041">
   <properties/>
-  <testcase name="settingsMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.02"/>
+  <testcase name="settingsMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.019"/>
   <testcase name="scoreMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.002"/>
-  <testcase name="loserMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.004"/>
-  <testcase name="instructionsMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.001"/>
-  <testcase name="winnerMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.001"/>
+  <testcase name="loserMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.002"/>
+  <testcase name="instructionsMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.003"/>
+  <testcase name="winnerMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.002"/>
   <testcase name="mainMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.003"/>
   <testcase name="arenasMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.002"/>
-  <testcase name="aboutMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.003"/>
-  <testcase name="winnerScoreMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.011"/>
-  <testcase name="arenaScoreMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.003"/>
+  <testcase name="aboutMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.001"/>
+  <testcase name="winnerScoreMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.001"/>
+  <testcase name="arenaScoreMenuViewer()" classname="com.project.ldts.viewer.MenuViewerTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -19,10 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 public abstract class LanternaGUI implements GUI {
     final Screen screen;
@@ -39,7 +37,7 @@ public abstract class LanternaGUI implements GUI {
         this.screen = createScreen(terminal);
     }
 
-    private Screen createScreen(Terminal terminal) throws IOException {
+    public Screen createScreen(Terminal terminal) throws IOException {
         final Screen screen;
         screen = new TerminalScreen(terminal);
 
@@ -49,7 +47,7 @@ public abstract class LanternaGUI implements GUI {
         return screen;
     }
 
-    private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {
+    public Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {
         TerminalSize terminalSize = new TerminalSize(width, height);
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         terminalFactory.setForceAWTOverSwing(true);
@@ -57,7 +55,7 @@ public abstract class LanternaGUI implements GUI {
         return terminalFactory.createTerminal();
     }
 
-    private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
+    public AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
         URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
@@ -67,25 +65,6 @@ public abstract class LanternaGUI implements GUI {
 
         Font loadedFont = font.deriveFont(Font.PLAIN, 25);
         return AWTTerminalFontConfiguration.newInstance(loadedFont);
-    }
-
-    public ACTION getNextAction() throws IOException {
-        keyStroke = screen.pollInput();
-        if (keyStroke == null) return ACTION.NONE;
-
-        if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
-
-        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
-        if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
-        if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
-        if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
-
-        if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 's') return ACTION.SHOT;
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'c') return ACTION.COLLECT;
-
-        return ACTION.NONE;
     }
 
     @Override
@@ -103,6 +82,34 @@ public abstract class LanternaGUI implements GUI {
         graphics.setForegroundColor(TextColor.Factory.fromString(color));
         graphics.enableModifiers(SGR.BOLD);
         graphics.putString(position.getX(), position.getY(), text);
+    }
+
+    public void drawCharacter(int x, int y, char c, String colorB, String colorF) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString(colorB));
+        graphics.setForegroundColor(TextColor.Factory.fromString(colorF));
+        graphics.enableModifiers(SGR.BOLD);
+        graphics.putString(x, y, "" + c);
+    }
+
+    @Override
+    public ACTION getNextAction() throws IOException {
+        keyStroke = screen.pollInput();
+        if (keyStroke == null) return ACTION.NONE;
+
+        if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
+
+        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
+        if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
+        if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
+        if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
+
+        if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 's') return ACTION.SHOT;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'c') return ACTION.COLLECT;
+
+        return ACTION.NONE;
     }
 
     @Override
@@ -147,14 +154,6 @@ public abstract class LanternaGUI implements GUI {
         return nome;
     }
 
-    public void drawCharacter(int x, int y, char c, String colorB, String colorF) {
-        TextGraphics graphics = screen.newTextGraphics();
-        graphics.setBackgroundColor(TextColor.Factory.fromString(colorB));
-        graphics.setForegroundColor(TextColor.Factory.fromString(colorF));
-        graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(x, y, "" + c);
-    }
-
     public void drawAboutTexts(TextGraphics graphics){
         graphics.putString(5,3,"LDTS Project - LEIC FEUP");
         graphics.putString(1,6,"This project consists of a surviving game");
@@ -182,7 +181,7 @@ public abstract class LanternaGUI implements GUI {
     }
 
     public void drawScoresText(TextGraphics graphics, HashMap<String, Integer> map){
-        List<Map.Entry<String, Integer> > list = new LinkedList<>(map.entrySet());
+        List<Map.Entry<String, Integer> > list = new ArrayList<>(map.entrySet());
 
         int pos = 0;
         for (Map.Entry<String, Integer> aux : list) {

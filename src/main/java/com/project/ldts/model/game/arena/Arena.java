@@ -230,7 +230,7 @@ public class Arena {
                 bullets.remove(bullet);
                 enemies.remove(enemy);
             }
-            if ((enemy.getPosition().equals(bullet.getPosition())) && isOnWater(enemy.getPosition())){
+            if (enemy.getPosition().equals(bullet.getPosition()) && isOnWater(enemy.getPosition())){
                 bullets.remove(bullet);
                 enemy.decreaseHealth();
             }

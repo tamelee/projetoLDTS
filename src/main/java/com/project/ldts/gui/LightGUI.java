@@ -62,7 +62,6 @@ public class LightGUI extends LanternaGUI{
         drawCharacter(position.getX(), position.getY(), '+', "#FEF6F7", "#D41111");
     }
 
-
     @Override
     public void drawArenaFloor(int width, int height, char c){
         TextGraphics graphics = screen.newTextGraphics();
@@ -132,13 +131,6 @@ public class LightGUI extends LanternaGUI{
         TextGraphics graphics = menuBackground();
         graphics.setForegroundColor(TextColor.Factory.fromString("#083663"));
         arenaMenuText(graphics);
-    }
-
-    @Override
-    public String drawWinnerScoreMenu() {
-        TextGraphics graphics = menuBackground();
-        drawWinnerScoreTexts(graphics);
-        return nome;
     }
 
     @Override

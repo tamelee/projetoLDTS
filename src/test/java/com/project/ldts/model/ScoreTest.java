@@ -26,12 +26,4 @@ public class ScoreTest {
         score.setTop5("Unknown", 500);
         assertNotEquals(score.getScores(), aux);
     }
-
-    @Test
-    public void scoreWriter() throws IOException {
-        ScoreWriter score = Mockito.mock(ScoreWriter.class);
-        Mockito.doNothing().when(score).write();
-        score.write();
-        Mockito.verify(score, Mockito.atLeastOnce()).write();
-    }
 }

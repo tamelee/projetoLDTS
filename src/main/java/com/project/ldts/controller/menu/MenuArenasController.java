@@ -57,6 +57,8 @@ public class MenuArenasController extends Controller<MenuArenas> {
                 }
 
             }
+            default -> { // fall out;
+            }
         }
     }
 }

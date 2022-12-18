@@ -3,14 +3,10 @@ package com.project.ldts.controller;
 import com.project.ldts.Application;
 import com.project.ldts.controller.game.ArenaController;
 import com.project.ldts.gui.GUI;
-import com.project.ldts.model.Position;
 import com.project.ldts.model.game.arena.Arena;
 import com.project.ldts.model.game.elements.Enemy;
 import com.project.ldts.model.game.elements.Player;
 import com.project.ldts.model.game.elements.Wall;
-import com.project.ldts.model.menu.MainMenu;
-import com.project.ldts.states.GameState;
-import com.project.ldts.states.menu.MainMenuState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -23,7 +19,6 @@ import java.util.Arrays;
 public class ArenaControllerTest {
     private Application game;
     private Arena model;
-    private GameState state;
     private ArenaController controller;
 
     @BeforeEach
@@ -33,8 +28,6 @@ public class ArenaControllerTest {
         Mockito.when(model.getPlayer()).thenReturn(new Player(10, 10));
         Mockito.when(model.getEnemies()).thenReturn(Arrays.asList(new Enemy(5, 6), new Enemy(25, 13)));
         Mockito.when(model.getWalls()).thenReturn(Arrays.asList(new Wall(1,1), new Wall(30,15)));
-        state = new GameState(model);
-        game.setState(state);
         controller = new ArenaController(model);
     }
 

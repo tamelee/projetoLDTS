@@ -34,6 +34,7 @@ public class ArenaController extends GameController {
         this.lastCount = 0;
     }
 
+    @Override
     public void step(Application game, GUI.ACTION action, long time) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         if (action == GUI.ACTION.QUIT)
             game.setState(new MainMenuState(new MainMenu()));

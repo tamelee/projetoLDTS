@@ -28,8 +28,8 @@ public class LightGUITest {
     @Test
     public void drawPlayer(){
         gui.drawPlayer(new Position(10, 10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#58BD0F")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#DE5912")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#58BD0F"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#DE5912"));
         Mockito.verify(graphics, Mockito.times(1)).enableModifiers(SGR.BOLD);
         Mockito.verify(graphics, Mockito.times(1)).putString(10,10, "X");
     }
@@ -37,8 +37,8 @@ public class LightGUITest {
     @Test
     public void drawEnemy(){
         gui.drawEnemy(new Position(10, 10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#58BD0F")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#620D9C")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#58BD0F"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#620D9C"));
         Mockito.verify(graphics, Mockito.times(1)).enableModifiers(SGR.BOLD);
         Mockito.verify(graphics, Mockito.times(1)).putString(10,10, "@");
     }
@@ -52,8 +52,8 @@ public class LightGUITest {
     @Test
     public void drawOnWater(){
         gui.drawOnWater(new Position(10,10), 'X');
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#5AD3F2")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#11B0D0")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#5AD3F2"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#11B0D0"));
         Mockito.verify(graphics, Mockito.times(1)).enableModifiers(SGR.BOLD);
         Mockito.verify(graphics, Mockito.times(1)).putString(10,10, "X");
     }
@@ -61,8 +61,8 @@ public class LightGUITest {
     @Test
     public void drawOnSand(){
         gui.drawOnSand(new Position(10,10), 'X', "#620D9C");
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#F1A855")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#620D9C")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#F1A855"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#620D9C"));
         Mockito.verify(graphics, Mockito.times(1)).enableModifiers(SGR.BOLD);
         Mockito.verify(graphics, Mockito.times(1)).putString(10,10, "X");
     }
@@ -70,50 +70,50 @@ public class LightGUITest {
     @Test
     public void drawWall(){
         gui.drawWall(new Position(10,10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#448E0B")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#DE5912")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#448E0B"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#DE5912"));
     }
 
     @Test
     public void drawWater(){
         gui.drawWater(new Position(10,10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#5AD3F2")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#11B0D0")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#5AD3F2"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#11B0D0"));
     }
 
     @Test
     public void drawSand(){
         gui.drawSand(new Position(10,10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#F1A855")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#E28112")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#F1A855"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#E28112"));
     }
 
     @Test
     public void drawSpecialBox(){
         gui.drawSpecialBox(new Position(10,10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#553107")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#E28112")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#553107"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#E28112"));
     }
 
     @Test
     public void drawSafeHouse(){
         gui.drawSafeHouse(new Position(10,10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#FEF6F7")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#D41111")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#FEF6F7"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#D41111"));
     }
 
     @Test
     public void drawBullet(){
         gui.drawBullet(new Position(10,10));
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#711E09")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#ECEC13")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#711E09"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#ECEC13"));
     }
 
     @Test
     public void drawArenaFloor(){
         gui.drawArenaFloor(30, 15, ',');
-        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor((TextColor.Factory.fromString("#58BD0F")));
-        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor((TextColor.Factory.fromString("#448E0B")));
+        Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#58BD0F"));
+        Mockito.verify(graphics, Mockito.times(1)).setForegroundColor(TextColor.Factory.fromString("#448E0B"));
     }
 
     @Test

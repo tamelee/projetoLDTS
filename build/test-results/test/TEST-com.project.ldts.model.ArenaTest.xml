@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.project.ldts.model.ArenaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.004">
+<testsuite name="com.project.ldts.model.ArenaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-18T22:48:32" hostname="Eltons-MacBook-Pro.local" time="0.011">
   <properties/>
-  <testcase name="arenaBuilder()" classname="com.project.ldts.model.ArenaTest" time="0.004"/>
+  <testcase name="arenaLoader()" classname="com.project.ldts.model.ArenaTest" time="0.009"/>
+  <testcase name="arenaBuilder()" classname="com.project.ldts.model.ArenaTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

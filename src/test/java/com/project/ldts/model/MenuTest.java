@@ -6,6 +6,8 @@ import com.project.ldts.model.menu.*;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MenuTest {
@@ -167,7 +169,14 @@ public class MenuTest {
     public void menuWinnerScore(){
         Arena arena = Mockito.mock(Arena.class);
         ScoreReader scoreReader = Mockito.mock(ScoreReader.class);
+
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("Maureen", 250);
+        map.put("Elton", 200);
+
+        Mockito.when(scoreReader.getScores()).thenReturn(map);
         MenuWinnerScore menu = new MenuWinnerScore(arena, scoreReader);
+
         assertNotEquals(menu.getNumberEntries(), 0);
         assertTrue(menu.isSelectedSave());
         menu.previousEntry();
@@ -188,5 +197,7 @@ public class MenuTest {
         assertEquals(menu.getEntry(0), "SAVE");
         assertEquals(menu.getEntry(1), "MENU");
         assertEquals(menu.getEntry(2), "EXIT");
+
+        assertEquals(menu.getScore(), scoreReader);
     }
 }

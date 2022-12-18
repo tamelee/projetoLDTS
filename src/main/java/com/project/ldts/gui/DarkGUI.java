@@ -135,13 +135,6 @@ public class DarkGUI extends LanternaGUI{
     }
 
     @Override
-    public String drawWinnerScoreMenu() {
-        TextGraphics graphics = menuBackground();
-        drawWinnerScoreTexts(graphics);
-        return nome;
-    }
-
-    @Override
     public void drawSettingsMenu(){
         TextGraphics graphics = menuBackground();
         graphics.setForegroundColor(TextColor.Factory.fromString("#2FBBEE"));

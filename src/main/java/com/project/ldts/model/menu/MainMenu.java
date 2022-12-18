@@ -3,6 +3,7 @@ package com.project.ldts.model.menu;
 import java.util.Arrays;
 
 public class MainMenu extends Entries{
+
     public MainMenu() {
         super(Arrays.asList("Start", "Scores", "Instructions", "Settings", "About", "Exit"));
     }

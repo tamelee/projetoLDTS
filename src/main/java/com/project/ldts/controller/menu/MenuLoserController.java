@@ -14,8 +14,6 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
-import static java.lang.System.exit;
-
 public class MenuLoserController extends Controller<MenuLoser> {
 
     public MenuLoserController(MenuLoser menu){
@@ -33,6 +31,8 @@ public class MenuLoserController extends Controller<MenuLoser> {
                 if(getModel().isSelectedMenu()) game.setState(new MainMenuState(new MainMenu()));
                 if(game.isSound())
                     new Sound("select").playSound();
+            }
+            default -> { // fall out;
             }
         }
     }

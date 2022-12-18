@@ -38,6 +38,8 @@ public class MenuArenaScoreController extends Controller<MenuArenas> {
                 if(game.isSound())
                     new Sound("select").playSound();
             }
+            default -> { // fall out;
+            }
         }
     }
 }

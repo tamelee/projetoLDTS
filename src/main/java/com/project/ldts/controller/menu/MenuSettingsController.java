@@ -41,6 +41,8 @@ public class MenuSettingsController extends Controller<MenuSettings> {
                 if(game.isSound())
                     new Sound("select").playSound();
             }
+            default -> { // fall out;
+            }
         }
     }
 }

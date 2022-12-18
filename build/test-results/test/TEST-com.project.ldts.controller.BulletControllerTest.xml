@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.project.ldts.controller.BulletControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:07" hostname="Eltons-MacBook-Pro.local" time="0.994">
+<testsuite name="com.project.ldts.controller.BulletControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-18T22:48:32" hostname="Eltons-MacBook-Pro.local" time="0.041">
   <properties/>
-  <testcase name="moveBullets()" classname="com.project.ldts.controller.BulletControllerTest" time="0.994"/>
+  <testcase name="moveBullets()" classname="com.project.ldts.controller.BulletControllerTest" time="0.041"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

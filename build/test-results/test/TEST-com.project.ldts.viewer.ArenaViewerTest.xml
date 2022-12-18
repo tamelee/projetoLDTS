@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.project.ldts.viewer.ArenaViewerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-14T14:40:09" hostname="Eltons-MacBook-Pro.local" time="0.086">
+<testsuite name="com.project.ldts.viewer.ArenaViewerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-18T22:48:32" hostname="Eltons-MacBook-Pro.local" time="0.086">
   <properties/>
-  <testcase name="drawSafeHouse()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.038"/>
-  <testcase name="drawSand()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.004"/>
-  <testcase name="drawWall()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.003"/>
-  <testcase name="drawBullets()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.005"/>
-  <testcase name="drawPlayer()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.009"/>
+  <testcase name="drawSafeHouse()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.036"/>
+  <testcase name="drawSand()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.005"/>
+  <testcase name="drawWall()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.004"/>
+  <testcase name="drawBullets()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.003"/>
+  <testcase name="drawPlayer()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.008"/>
   <testcase name="clear()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.003"/>
-  <testcase name="drawWater()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.004"/>
-  <testcase name="refresh()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.004"/>
-  <testcase name="drawSpecialBoxes()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.002"/>
-  <testcase name="drawEnemies()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.007"/>
+  <testcase name="drawWater()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.003"/>
+  <testcase name="refresh()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.002"/>
+  <testcase name="drawSpecialBoxes()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.004"/>
+  <testcase name="drawEnemies()" classname="com.project.ldts.viewer.ArenaViewerTest" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

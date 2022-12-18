@@ -24,7 +24,7 @@ public class Application {
         this.sound = true;
     }
 
-    public static void main (String [] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException {
+    public static void main (String [] args) throws IOException, URISyntaxException, FontFormatException, UnsupportedAudioFileException, LineUnavailableException, InterruptedException {
         new Application().start();
     }
 
@@ -41,7 +41,7 @@ public class Application {
     public void setGui(LanternaGUI gui) {this.gui = gui;}
     public LanternaGUI getGui() {return gui;}
 
-    public void start() throws IOException, UnsupportedAudioFileException, LineUnavailableException, URISyntaxException, FontFormatException {
+    public void start() throws IOException, UnsupportedAudioFileException, LineUnavailableException, URISyntaxException, FontFormatException, InterruptedException {
         int FPS = 10;
         int frameTime = 1000 / FPS;
 
@@ -53,10 +53,7 @@ public class Application {
             long elapsedTime = System.currentTimeMillis() - startTime;
             long sleepTime = frameTime - elapsedTime;
 
-            try {
-                if (sleepTime > 0) Thread.sleep(sleepTime);
-            } catch (InterruptedException e) {
-            }
+            if (sleepTime > 0) Thread.sleep(sleepTime);
         }
         gui.close();
     }

@@ -9,6 +9,7 @@ import com.project.ldts.states.menu.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.mockito.internal.matchers.Any;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -27,8 +28,6 @@ public class MenuControllerTest {
     @Test
     public void mainMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MainMenu model = Mockito.mock(MainMenu.class);
-        MainMenuState state = new MainMenuState(model);
-        game.setState(state);
         MainMenuController mainMenu = new MainMenuController(model);
 
         mainMenu.step(game, GUI.ACTION.DOWN, 1000);
@@ -49,8 +48,6 @@ public class MenuControllerTest {
     @Test
     public void arenasMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuArenas model = Mockito.mock(MenuArenas.class);
-        MenuArenasState state = new MenuArenasState(model);
-        game.setState(state);
         MenuArenasController controller = new MenuArenasController(model);
 
         controller.step(game, GUI.ACTION.DOWN, 1000);
@@ -77,8 +74,6 @@ public class MenuControllerTest {
     @Test
     public void arenaScoreMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuArenas model = Mockito.mock(MenuArenas.class);
-        MenuArenasScoreState state = new MenuArenasScoreState(model);
-        game.setState(state);
         MenuArenaScoreController controller = new MenuArenaScoreController(model);
 
         controller.step(game, GUI.ACTION.DOWN, 1000);
@@ -91,8 +86,6 @@ public class MenuControllerTest {
     @Test
     public void instructionsMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuInfo model = Mockito.mock(MenuInfo.class);
-        MenuInfoState state = new MenuInstructionsState(model);
-        game.setState(state);
         MenuInfoController controller = new MenuInfoController(model);
 
         controller.step(game, GUI.ACTION.SELECT, 1000);
@@ -102,8 +95,6 @@ public class MenuControllerTest {
     @Test
     public void aboutMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuInfo model = Mockito.mock(MenuInfo.class);
-        MenuInfoState state = new MenuAboutState(model);
-        game.setState(state);
         MenuInfoController controller = new MenuInfoController(model);
 
         controller.step(game, GUI.ACTION.SELECT, 1000);
@@ -113,8 +104,6 @@ public class MenuControllerTest {
     @Test
     public void scoreMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuInfo model = Mockito.mock(MenuInfo.class);
-        MenuInfoState state = new MenuScoreState(model);
-        game.setState(state);
         MenuInfoController controller = new MenuInfoController(model);
 
         controller.step(game, GUI.ACTION.SELECT, 1000);
@@ -124,8 +113,6 @@ public class MenuControllerTest {
     @Test
     public void loserMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuLoser model = Mockito.mock(MenuLoser.class);
-        MenuLoserState state = new MenuLoserState(model);
-        game.setState(state);
         MenuLoserController controller = new MenuLoserController(model);
 
         controller.step(game, GUI.ACTION.DOWN, 1000);
@@ -143,8 +130,6 @@ public class MenuControllerTest {
     @Test
     public void settingsMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException, URISyntaxException, FontFormatException {
         MenuSettings model = Mockito.mock(MenuSettings.class);
-        MenuSettingState state = new MenuSettingState(model);
-        game.setState(state);
         MenuSettingsController controller = new MenuSettingsController(model);
 
         controller.step(game, GUI.ACTION.DOWN, 1000);
@@ -164,8 +149,6 @@ public class MenuControllerTest {
     @Test
     public void winnerMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuWinner model = Mockito.mock(MenuWinner.class);
-        MenuWinnerState state = new MenuWinnerState(model);
-        game.setState(state);
         MenuWinnerController controller = new MenuWinnerController(model);
 
         controller.step(game, GUI.ACTION.DOWN, 1000);
@@ -183,8 +166,6 @@ public class MenuControllerTest {
     @Test
     public void winnerScoreMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         MenuWinnerScore model = Mockito.mock(MenuWinnerScore.class);
-        MenuWinnerScoreState state = new MenuWinnerScoreState(model);
-        game.setState(state);
         MenuWinnerScoreController controller = new MenuWinnerScoreController(model);
 
         controller.step(game, GUI.ACTION.RIGHT, 1000);

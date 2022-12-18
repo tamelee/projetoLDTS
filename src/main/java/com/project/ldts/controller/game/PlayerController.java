@@ -35,6 +35,8 @@ public class PlayerController extends GameController {
             case RIGHT -> { movePlayerRight(); getModel().getPlayer().setDirection('r'); }
             case SHOT -> getModel().firePlayerShots();
             case COLLECT -> getModel().collectPower();
+            default -> { // fall out;
+            }
         }
     }
 

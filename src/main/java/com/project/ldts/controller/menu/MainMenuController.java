@@ -35,6 +35,8 @@ public class MainMenuController extends Controller<MainMenu> {
                 if(game.isSound())
                     new Sound("select").playSound();
             }
+            default -> { // fall out;
+            }
         }
     }
 }

@@ -2,7 +2,7 @@ package com.project.ldts.model.menu;
 
 import java.util.Arrays;
 
-public class MenuSettings extends Entries {
+public class MenuSettings extends Entries{
 
     public MenuSettings() {
         super(Arrays.asList("TURN ON Sound", "TURN OFF Sound", "LIGHT Mode", "DARK Mode", "Return"));
