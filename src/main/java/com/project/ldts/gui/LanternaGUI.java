@@ -1,6 +1,7 @@
 package com.project.ldts.gui;
 
 import com.googlecode.lanterna.SGR;
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
@@ -104,14 +105,6 @@ public abstract class LanternaGUI implements GUI {
         graphics.putString(position.getX(), position.getY(), text);
     }
 
-    public void drawCharacter(int x, int y, char c, String colorB, String colorF) {
-        TextGraphics graphics = screen.newTextGraphics();
-        graphics.setBackgroundColor(TextColor.Factory.fromString(colorB));
-        graphics.setForegroundColor(TextColor.Factory.fromString(colorF));
-        graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(x, y, "" + c);
-    }
-
     @Override
     public void drawFirstRow(int health, String minutes, char power, String seconds, int enemies){
         TextGraphics graphics = screen.newTextGraphics();
@@ -145,6 +138,21 @@ public abstract class LanternaGUI implements GUI {
     @Override
     public void close() throws IOException {
         screen.close();
+    }
+
+    @Override
+    public String drawWinnerScoreMenu() {
+        TextGraphics graphics = menuBackground();
+        drawWinnerScoreTexts(graphics);
+        return nome;
+    }
+
+    public void drawCharacter(int x, int y, char c, String colorB, String colorF) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString(colorB));
+        graphics.setForegroundColor(TextColor.Factory.fromString(colorF));
+        graphics.enableModifiers(SGR.BOLD);
+        graphics.putString(x, y, "" + c);
     }
 
     public void drawAboutTexts(TextGraphics graphics){
@@ -208,11 +216,28 @@ public abstract class LanternaGUI implements GUI {
         graphics.putString(22, 17, ""+nome);
     }
 
-    @Override
-    public String drawWinnerScoreMenu() {
-        TextGraphics graphics = menuBackground();
-        drawWinnerScoreTexts(graphics);
-        return nome;
+    public void arenaMenuText(TextGraphics graphics){
+        graphics.putString(12, 5, "      S  U  R  V  I  V  E      ", SGR.REVERSE, SGR.BOLD, SGR.BORDERED);
+        graphics.setForegroundColor(TextColor.Factory.fromString("#89D1F5"));
+        graphics.putString(19, 7, "CHOOSE YOUR ARENA", SGR.BOLD, SGR.BORDERED);
+    }
+
+    public void scoreMenuText(TextGraphics graphics){
+        graphics.setForegroundColor(TextColor.Factory.fromString("#E28C12"));
+        graphics.putString(20, 5, nome+" Scores", SGR.BOLD, SGR.BORDERED);
+        graphics.putString(26, 7, "TOP 5", SGR.BOLD);
+    }
+
+    public void arenaScoreMenuText(TextGraphics graphics){
+        graphics.putString(20, 5, "SURVIVE SCORES", SGR.BOLD, SGR.ITALIC);
+        graphics.setForegroundColor(TextColor.Factory.fromString("#E28C12"));
+        graphics.putString(13, 8, "WICH ARENA DO YOU WANT TO SEE?", SGR.BOLD, SGR.BORDERED);
+    }
+
+    public void loserMenuText(TextGraphics graphics){
+        graphics.fillRectangle(new TerminalPosition(0, 1), new TerminalSize(55, 30), ' ');
+        graphics.setForegroundColor(TextColor.Factory.fromString("#D01111"));
+        graphics.putString(15, 12, "G  A  M  E     O  V  E  R", SGR.BOLD, SGR.BORDERED);
     }
 
     public abstract TextGraphics menuBackground();

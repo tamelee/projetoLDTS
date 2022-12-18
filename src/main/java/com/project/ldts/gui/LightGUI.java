@@ -99,9 +99,7 @@ public class LightGUI extends LanternaGUI{
     @Override
     public void drawScoreMenu(String nome, HashMap<String, Integer> map){
         TextGraphics graphics = menuBackground();
-        graphics.setForegroundColor(TextColor.Factory.fromString("#E28C12"));
-        graphics.putString(20, 5, nome+" Scores", SGR.BOLD, SGR.BORDERED);
-        graphics.putString(26, 7, "TOP 5", SGR.BOLD);
+        scoreMenuText(graphics);
         graphics.setForegroundColor(TextColor.Factory.fromString("#083663"));
 
         drawScoresText(graphics, map);
@@ -111,18 +109,14 @@ public class LightGUI extends LanternaGUI{
     public void drawArenaScoreMenu(){
         TextGraphics graphics = menuBackground();
         graphics.setForegroundColor(TextColor.Factory.fromString("#083663"));
-        graphics.putString(20, 5, "SURVIVE SCORES", SGR.BOLD, SGR.ITALIC);
-        graphics.setForegroundColor(TextColor.Factory.fromString("#E28C12"));
-        graphics.putString(13, 8, "WICH ARENA DO YOU WANT TO SEE?", SGR.BOLD, SGR.BORDERED);
+        arenaScoreMenuText(graphics);
     }
 
     @Override
     public void drawLoserMenu(){
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#2BDEEE"));
-        graphics.fillRectangle(new TerminalPosition(0, 1), new TerminalSize(55, 30), ' ');
-        graphics.setForegroundColor(TextColor.Factory.fromString("#D01111"));
-        graphics.putString(15, 12, "G  A  M  E     O  V  E  R", SGR.BOLD, SGR.BORDERED);
+        loserMenuText(graphics);
     }
 
     @Override
@@ -137,9 +131,7 @@ public class LightGUI extends LanternaGUI{
     public void drawArenasMenu(){
         TextGraphics graphics = menuBackground();
         graphics.setForegroundColor(TextColor.Factory.fromString("#083663"));
-        graphics.putString(12, 5, "      S  U  R  V  I  V  E      ", SGR.REVERSE, SGR.BOLD, SGR.BORDERED);
-        graphics.setForegroundColor(TextColor.Factory.fromString("#89D1F5"));
-        graphics.putString(19, 7, "CHOOSE YOUR ARENA", SGR.BOLD, SGR.BORDERED);
+        arenaMenuText(graphics);
     }
 
     @Override
