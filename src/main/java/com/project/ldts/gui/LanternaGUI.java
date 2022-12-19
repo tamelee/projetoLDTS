@@ -13,6 +13,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.project.ldts.model.Position;
+import com.project.ldts.model.game.arena.Arena;
 
 import java.awt.*;
 import java.io.File;
@@ -26,6 +27,8 @@ public abstract class LanternaGUI implements GUI {
     final Screen screen;
     KeyStroke keyStroke;
     String nome = "";
+    String background;
+    String foreground;
 
     public LanternaGUI(Screen screen) {
         this.screen = screen;
@@ -69,13 +72,18 @@ public abstract class LanternaGUI implements GUI {
 
     @Override
     public void drawSpecialBox(Position position){
-        drawCharacter(position.getX(), position.getY(), 'b', "#553107", "#E28112");
+        background = "#553107";
+        foreground = "#E28112";
+        drawCharacter(position, 'b');
     }
 
     @Override
     public void drawBullet(Position position) {
-        drawCharacter(position.getX(), position.getY(), '*', "#711E09", "#ECEC13");
+        background = "#711E09";
+        foreground = "#ECEC13";
+        drawCharacter(position, '*');
     }
+
     @Override
     public void drawText(Position position, String text, String color) {
         TextGraphics graphics = screen.newTextGraphics();
@@ -84,12 +92,12 @@ public abstract class LanternaGUI implements GUI {
         graphics.putString(position.getX(), position.getY(), text);
     }
 
-    public void drawCharacter(int x, int y, char c, String colorB, String colorF) {
+    public void drawCharacter(Position position, char c) {
         TextGraphics graphics = screen.newTextGraphics();
-        graphics.setBackgroundColor(TextColor.Factory.fromString(colorB));
-        graphics.setForegroundColor(TextColor.Factory.fromString(colorF));
+        graphics.setBackgroundColor(TextColor.Factory.fromString(background));
+        graphics.setForegroundColor(TextColor.Factory.fromString(foreground));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(x, y, "" + c);
+        graphics.putString(position.getX(), position.getY(), "" + c);
     }
 
     @Override
@@ -113,23 +121,23 @@ public abstract class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawFirstRow(int health, String minutes, char power, String seconds, int enemies){
+    public void drawFirstRow(Arena arena){
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
         graphics.setForegroundColor(TextColor.Factory.fromString("#FBFAFF"));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(5, 0, "Health: " +health);
-        graphics.putString(25, 0, minutes+ ":" +seconds);
-        graphics.putString(40, 0, "Enemies: " +enemies);
+        graphics.putString(5, 0, "Health: " +arena.getPlayer().getHealth());
+        graphics.putString(25, 0, arena.getDminutes()+ ":" +arena.getDseconds());
+        graphics.putString(40, 0, "Enemies: " +arena.getEnemies().size());
 
-        if(power == 'p')
+        if(arena.getPower() == 'p')
             graphics.setForegroundColor(TextColor.Factory.fromString("#920C89"));
-        if(power == 't')
+        if(arena.getPower() == 't')
             graphics.setForegroundColor(TextColor.Factory.fromString("#6DD6F3"));
-        if(power == 'i')
+        if(arena.getPower() == 'i')
             graphics.setForegroundColor(TextColor.Factory.fromString("#EEC72B"));
 
-        graphics.putString(19, 0, ""+power);
+        graphics.putString(19, 0, ""+arena.getPower());
     }
 
     @Override

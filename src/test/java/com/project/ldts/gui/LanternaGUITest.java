@@ -5,6 +5,9 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import com.project.ldts.model.Position;
+import com.project.ldts.model.game.arena.Arena;
+import com.project.ldts.model.game.elements.Enemy;
+import com.project.ldts.model.game.elements.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -12,6 +15,7 @@ import org.mockito.Mockito;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -50,7 +54,10 @@ public class LanternaGUITest {
 
     @Test
     public void drawFirstRow(){
-        gui.drawFirstRow(5, "05", ' ', "00", 6);
+        Arena arena = new Arena(30, 15);
+        arena.setPlayer(new Player(10, 10));
+        arena.setEnemies(Arrays.asList(new Enemy(2,3), new Enemy(14, 15)));
+        gui.drawFirstRow(arena);
         Mockito.verify(graphics, Mockito.times(1)).setBackgroundColor(TextColor.Factory.fromString("#000000"));
     }
 

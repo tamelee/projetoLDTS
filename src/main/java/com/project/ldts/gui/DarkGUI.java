@@ -25,42 +25,58 @@ public class DarkGUI extends LanternaGUI{
 
     @Override
     public void drawPlayer(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'X', "#84540B", "#DE5912");
+        background = "#84540B";
+        foreground = "#DE5912";
+        drawCharacter(position, 'X');
     }
 
     @Override
     public void drawEnemy(Position position) {
-        drawCharacter(position.getX(), position.getY(), '@', "#84540B", "#620D9C");
+        background = "#84540B";
+        foreground = "#620D9C";
+        drawCharacter(position, '@');
     }
 
     @Override
     public void drawOnWater(Position position, char c){
-        drawCharacter(position.getX(), position.getY(), c, "#10C16E", "#0EAA54");
+        background = "#10C16E";
+        foreground = "#0EAA54";
+        drawCharacter(position, c);
     }
 
     @Override
     public void drawOnSand(Position position, char c, String color){
-        drawCharacter(position.getX(), position.getY(), c, "#F1A855", color);
+        background = "#F1A855";
+        foreground = color;
+        drawCharacter(position, c);
     }
 
     @Override
     public void drawWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), '☒', "#76430A", "#2F1904");
+        background = "#76430A";
+        foreground = "#2F1904";
+        drawCharacter(position, '☒');
     }
 
     @Override
     public void drawWater(Position position) {
-        drawCharacter(position.getX(), position.getY(), '~', "#10C16E", "#0EAA54");
+        background = "#10C16E";
+        foreground = "#0EAA54";
+        drawCharacter(position, '~');
     }
 
     @Override
     public void drawSand(Position position) {
-        drawCharacter(position.getX(), position.getY(), '.', "#F1A855", "#E28112");
+        background = "#F1A855";
+        foreground = "#E28112";
+        drawCharacter(position, '.');
     }
 
     @Override
     public void drawSafeHouse(Position position) {
-        drawCharacter(position.getX(), position.getY(), '+', "#D41111", "#FEF6F7");
+        background = "#D41111";
+        foreground = "#FEF6F7";
+        drawCharacter(position, '+');
     }
 
     @Override

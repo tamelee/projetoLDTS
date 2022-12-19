@@ -1,6 +1,7 @@
 package com.project.ldts.gui;
 
 import com.project.ldts.model.Position;
+import com.project.ldts.model.game.arena.Arena;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,7 +20,7 @@ public interface GUI {
     void drawSpecialBox(Position position);
     void drawBullet(Position position);
     void drawText(Position position, String text, String color);
-    void drawFirstRow(int health, String minutes, char power, String seconds, int enemies);
+    void drawFirstRow(Arena arena);
     void drawArenaFloor(int width, int height, char c);
     void drawMainMenu();
     void drawAboutMenu();

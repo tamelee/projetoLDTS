@@ -14,8 +14,7 @@ public class GameViewer extends Viewer <Arena>  {
     @Override
     public void drawElements(GUI gui) {
         gui.drawArenaFloor(getModel().getWidth(), getModel().getHeight(), ',');
-        gui.drawFirstRow(getModel().getPlayer().getHealth(), getModel().getDminutes(), getModel().getPower(),
-                getModel().getDseconds(), getModel().getEnemies().size());
+        gui.drawFirstRow(getModel());
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElements(gui, getModel().getSand(), new SandViewer());
         drawElements(gui, getModel().getWaters(), new WaterViewer());

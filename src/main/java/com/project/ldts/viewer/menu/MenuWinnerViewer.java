@@ -15,8 +15,7 @@ public class MenuWinnerViewer extends Viewer<MenuWinner> {
     protected void drawElements(GUI gui) {
         gui.drawWinnerMenu(getModel().getArena().getPlayer().getScore());
 
-        gui.drawFirstRow(getModel().getArena().getPlayer().getHealth(), getModel().getArena().getDminutes(), ' ',
-                getModel().getArena().getDseconds(), getModel().getArena().getEnemies().size());
+        gui.drawFirstRow(getModel().getArena());
 
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(
